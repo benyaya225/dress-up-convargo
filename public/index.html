@@ -2,8 +2,16 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Convargo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css" type="text/css"/>
+
   </head>
   <body>
+    <div id="Title">
+    <h1> Welcom to The Convago plateform</h1>
+    <p> Here , you can compute and display the transport price calculated according to the best opportunities on the market at a time T</p>
+  </div>
+
     <div id="trucker">
       <input class="name" type="text" placeholder="Trucker name"/>
       <input class="price-by-km" type="number" placeholder="Price by km"/>
@@ -13,10 +21,29 @@
       <input class="name" type="text" placeholder="Shipper name"/>
       <input class="distance" type="number" placeholder="Distance in km"/>
       <input class="volume" type="number" placeholder="Volume in m3"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
+      <input class="option" type="checkbox"><label for="checkbox2">Deductible option</label>
+    </div></br>
+
+  <div class="col-md-4">
+    <div id="Title"><strong>Price detail</strong></div>
+    <p>price = distance + volume</p>
+    <p>reduction: the price decreases by 10% after 5 m3 , by 30% after 10 m3, by 50% after 25 m3</p>
+    <p>deductible reduction option : 1€/m3</p>
+
+  </div>
+
+
+    <button class="btn btn-primary" id="compute">Compute</button>
     <div id="actors"></div>
+
+    <div class="callout">
+      <p> <strong>shipper debit </strong>: price paid by the shipper (shipping price +  deductible reduction (option))</p>
+      <p> <strong>trucker credit </strong>: money recived by the trucker (shipping price minus the commission)</p>
+      <p> <strong>the insurance credit </strong>: money recived by the insurance (part of the commission)</p>
+      <p> <strong>treasury credit  </strong>: money recived by the treasury (part of the tax commission)</p>
+      <p> <strong>convargo credit 0 </strong>: money recived Convargo (part of the commission, plus the deductible reduction)</p>
+
+    </div>
     <script src="convargo.js"></script>
     <script src="index.js"></script>
   </body>
