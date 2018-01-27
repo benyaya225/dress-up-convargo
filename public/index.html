@@ -1,50 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Convargo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css" type="text/css"/>
+<head>
+  <title>CSS/HTML Workshop with Convargo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css" type="text/css"/>
 
-  </head>
-  <body>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid">
     <div id="Title">
-    <h1> Welcom to The Convago plateform</h1>
-    <p> Here , you can compute and display the transport price calculated according to the best opportunities on the market at a time T</p>
+      <h1> Welcom to The Convago plateform</h1>
+      <p class="lead"> Here , you can compute and display the transport price calculated according to the best opportunities on the market at a time T</p>
+    </div>
   </div>
 
-    <div id="trucker">
-      <input class="name" type="text" placeholder="Trucker name"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div id="trucker">
+          <h1> Trucker : </h1>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Trucker name</span>
+            <input class="name form-control" type="number" />
+          </div></br>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Price by km</span>
+            <input class="price-by-km form-control" type="number" />
+          </div></br>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Price by m3</span>
+            <input class="price-by-cubic form-control" type="number" />
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div id="shipper">
+          <h1> shipper : </h1>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Shipper name</span>
+            <input class="name form-control" type="number" />
+          </div></br>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Distance in km</span>
+            <input class="distance form-control" type="number" />
+          </div></br>
+
+          <div class="input-group col-md-auto">
+            <span class="input-group-addon" id="basic-addon1">Volume in m3</span>
+            <input class="volume form-control" type="number" />
+          </div>
+
+        </div></br>
+      </div>
     </div>
-    <div id="shipper">
-      <input class="name" type="text" placeholder="Shipper name"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="volume" type="number" placeholder="Volume in m3"/>
+    <div class="row">
       <input class="option" type="checkbox"><label for="checkbox2">Deductible option</label>
-    </div></br>
-
-  <div class="col-md-4">
-    <div id="Title"><strong>Price detail</strong></div>
-    <p>price = distance + volume</p>
-    <p>reduction: the price decreases by 10% after 5 m3 , by 30% after 10 m3, by 50% after 25 m3</p>
-    <p>deductible reduction option : 1€/m3</p>
-
-  </div>
-
-
-    <button class="btn btn-primary" id="compute">Compute</button>
-    <div id="actors"></div>
-
-    <div class="callout">
-      <p> <strong>shipper debit </strong>: price paid by the shipper (shipping price +  deductible reduction (option))</p>
-      <p> <strong>trucker credit </strong>: money recived by the trucker (shipping price minus the commission)</p>
-      <p> <strong>the insurance credit </strong>: money recived by the insurance (part of the commission)</p>
-      <p> <strong>treasury credit  </strong>: money recived by the treasury (part of the tax commission)</p>
-      <p> <strong>convargo credit 0 </strong>: money recived Convargo (part of the commission, plus the deductible reduction)</p>
 
     </div>
-    <script src="convargo.js"></script>
-    <script src="index.js"></script>
-  </body>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="price col-md-4">
+      <div class="alert alert-warning" role="alert">
+
+        <div id="Title"><strong>Price detail</strong></div>
+        <p>price = distance + volume</p>
+        <p>reduction: the price decreases by 10% after 5 m3 , by 30% after 10 m3, by 50% after 25 m3</p>
+        <p>deductible reduction option : 1€/m3</p>
+      </div>
+    </div>
+  </div></br>
+
+  <div class="row justify-content-md-center">
+    <div class="button col-md-4">
+      <button class="btn btn-primary btn-lg btn-block" id="compute">Compute</button>
+    </div>
+  </div>
+</br>
+<div id="actors"></div>
+</br>
+<div class="callout">
+  <p> <strong>shipper debit </strong>: price paid by the shipper (shipping price +  deductible reduction (option))</p>
+  <p> <strong>trucker credit </strong>: money recived by the trucker (shipping price minus the commission)</p>
+  <p> <strong>the insurance credit </strong>: money recived by the insurance (part of the commission)</p>
+  <p> <strong>treasury credit  </strong>: money recived by the treasury (part of the tax commission)</p>
+  <p> <strong>convargo credit  </strong>: money recived Convargo (part of the commission, plus the deductible reduction)</p>
+
+</div>
+<script src="convargo.js"></script>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+crossorigin="anonymous"></script>
+</body>
 </html>
