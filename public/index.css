@@ -1,21 +1,28 @@
 body{
-margin:10px 10px}
+margin-left: :10px;
+margin-right: : :10px;
+
+}
 
 #Title{
   text-align: center
 }
-#compute{
-  text-align: center
-}
+
 button{
   margin:auto;
   display:block;
 }
 
-.col-md-4{
-  margin-left: 100px;
-  background-color: #ffb3b3
+.col-6{
+  text-align: center
 }
+
+#actors
+{
+  text-align: center
+
+}
+
 
 .callout {
   position: relative;
